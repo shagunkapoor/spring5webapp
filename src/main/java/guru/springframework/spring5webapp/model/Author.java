@@ -7,6 +7,8 @@ import java.util.Set;
 @Entity
 public class Author {
 
+    //The Id property is mapped to the primary key in the underlying database.
+    // Thus it is used to persist and retrieve object from the database.
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -54,6 +56,16 @@ public class Author {
 
     public void setBooks(Set<Book> books) {
         this.books = books;
+    }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", books=" + books +
+                '}';
     }
 
     @Override
